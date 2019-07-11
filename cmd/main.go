@@ -36,13 +36,29 @@ func main() {
 			Usage: "set log level for LXC",
 		},
 		cli.StringFlag{
-			Name:  "log-file",
+			Name:  "log-file, log",
 			Usage: "log file for LXC",
 		},
 		cli.StringFlag{
 			Name:  "lxc-path, root",
 			Usage: "set the lxc path to use",
 			Value: "/var/lib/lxc",
+		},
+		// Currently ignored args, for runc compat:
+		cli.BoolFlag{
+			Name:   "systemd-cgroup",
+			Usage:  "unused, here for runc compat",
+			Hidden: true,
+		},
+		cli.StringFlag{
+			Name:   "criu",
+			Usage:  "unused, here for runc compat. path to criu binary",
+			Hidden: true,
+		},
+		cli.BoolFlag{
+			Name:   "rootless",
+			Usage:  "unused, here for runc compat.",
+			Hidden: true,
 		},
 	}
 
