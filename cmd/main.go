@@ -14,6 +14,7 @@ var (
 )
 
 func main() {
+
 	app := cli.NewApp()
 	app.Name = "crio-lxc"
 	app.Usage = "crio-lxc is a CRI compliant runtime wrapper for lxc"
@@ -74,10 +75,10 @@ func main() {
 	if err := app.Run(os.Args); err != nil {
 		format := "error: %v\n"
 		if debug {
-			format = "error: %+v\n"
+			format = "error: %+v (args: %+v)\n"
 		}
 
-		fmt.Fprintf(os.Stderr, format, err)
+		fmt.Fprintf(os.Stderr, format, err, os.Args)
 		os.Exit(1)
 	}
 }
