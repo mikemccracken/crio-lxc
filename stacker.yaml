@@ -5,7 +5,7 @@ build:
 
     import:
         - https://dl.google.com/go/go1.12.5.linux-amd64.tar.gz
-        - https://github.com/lxc/lxc/archive/lxc-3.0.4.tar.gz
+        - https://github.com/lxc/lxc/archive/lxc-${{LXC_VERSION}}.tar.gz
 
     run: |
         sed -i 's/# deb-src/deb-src/g' /etc/apt/sources.list
@@ -21,8 +21,8 @@ build:
         tar xvf /stacker/go1.12.5.linux-amd64.tar.gz
         cd -
 
-        tar xvf /stacker/lxc-3.0.4.tar.gz
-        cd lxc-lxc-3.0.4
+        tar xvf /stacker/lxc-${{LXC_VERSION}}.tar.gz
+        cd lxc-lxc-${{LXC_VERSION}}
         ./autogen.sh
 
         ./configure \
