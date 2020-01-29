@@ -20,6 +20,8 @@ root = "CRIOLXC_TEST_DIR/crio-root"
 # Storage driver used to manage the storage of images and containers. Please
 # refer to containers-storage.conf(5) to see all available storage drivers.
 #storage_driver = "vfs"
+graphroot="CRIOLXC_TEST_DIR/storage-root"
+runroot="CRIOLXC_TEST_DIR/run-root"
 
 # List to pass options to the storage driver. Please refer to
 # containers-storage.conf(5) to see all available storage options.
@@ -229,10 +231,10 @@ runtime_root = "CRIOLXC_TEST_DIR/runtime-root"
 [crio.image]
 
 # Default transport for pulling images from a remote container storage.
-default_transport = "docker://"
+default_transport = "zot://"
 
 # The image used to instantiate infra containers.
-pause_image = "k8s.gcr.io/pause:3.1"
+pause_image = "zot://aci-zot.cisco.com:5000/atomfsdemo/pause:3.1"
 
 # If not empty, the path to a docker/config.json-like file containing credentials
 # necessary for pulling the image specified by pause_image above.
@@ -258,7 +260,7 @@ image_volumes = "mkdir"
 # registries (e.g., "quay.io", "registry.fedoraproject.org",
 # "registry.opensuse.org", etc.).
 registries = [
-    "docker.io",
+    "zot://aci-zot.cisco.com:5000",
 ]
 
 

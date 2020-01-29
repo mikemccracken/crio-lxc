@@ -3,7 +3,7 @@
       "name": "busybox"
   },
   "image":{
-      "image": "busybox"
+      "image": "atomfsdemo/pause:3.1"
   },
   "command": [
       "top"
