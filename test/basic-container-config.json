@@ -3,10 +3,10 @@
       "name": "busybox"
   },
   "image":{
-      "image": "atomfsdemo/busybox:latest"
+      "image": "atomfsdemo/app:rooted"
   },
   "command": [
-      "/bin/sh"
+      "python3 -m http.server"
   ],
   "log_path":"/tmp/busybox.log",
   "linux": {

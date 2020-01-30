@@ -20,9 +20,10 @@ function teardown() {
     crictl start $ctrid
     echo "after: crictl start ctr $ctrid"
     echo "========== started ctr" >&3
-    
     echo "################################################################################"
-    crictl ps -a | grep busybox
+    sleep 2s # if we curl before the webserver is up, we'll fail
+    podip=$(crictl inspectp $podid | jq -r .status.network.ip)
+    http_proxy= https_proxy= curl -s -S "$podip:8000/etc/issue"
     echo "################################################################################"
     crictl stop $ctrid
     crictl stopp $podid
