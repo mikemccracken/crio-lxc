@@ -3,12 +3,12 @@
       "name": "busybox"
   },
   "image":{
-      "image": "atomfsdemo/pause:3.1"
+      "image": "atomfsdemo/busybox:latest"
   },
   "command": [
-      "top"
+      "/bin/sh"
   ],
-  "log_path":"busybox/0.log",
+  "log_path":"/tmp/busybox/",
   "linux": {
   }
 }

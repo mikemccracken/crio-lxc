@@ -52,6 +52,11 @@ func configureLogging(ctx *cli.Context, c *lxc.Container) error {
 	if ctx.GlobalIsSet("log-file") {
 		c.SetLogFile(ctx.GlobalString("log-file"))
 	}
+
+	// MMCC temp
+	c.SetLogLevel(lxc.TRACE)
+	c.SetLogFile("/tmp/lxc.log")
+
 	return nil
 }
 
