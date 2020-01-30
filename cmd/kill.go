@@ -26,7 +26,7 @@ var killCmd = cli.Command{
 		cli.StringFlag{
 			Name:  "signal",
 			Usage: "the signal to send, as a string",
-			Value: "TERM",
+			Value: "KILL",
 		},
 	},
 }
