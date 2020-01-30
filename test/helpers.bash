@@ -47,6 +47,7 @@ function cleanup_crio {
 }
 
 function cleanup_tempdir {
+    cat /proc/self/mountinfo | grep "$TEMP_DIR" | cut -d" " -f 5 | sudo xargs umount
     [ -f .keeptempdirs ] || rm -rf "$TEMP_DIR" || true
 }
 
