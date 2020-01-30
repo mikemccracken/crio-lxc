@@ -27,5 +27,5 @@ function teardown() {
     echo "################################################################################"
     crictl stop $ctrid
     crictl stopp $podid
-    crictl rmp $podid
+    # crictl rmp $podid
 }
