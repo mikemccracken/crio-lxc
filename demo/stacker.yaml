@@ -1,0 +1,17 @@
+rooted:
+    from:
+        type: zot
+        url: zot://aci-zot.cisco.com:5000/atomfsdemo/ubuntu:latest
+    import:
+        - server.py
+    run: |
+        apt update
+        apt install -y python3
+        cp /stacker/server.py /usr/lib/python3.6/http/server.py
+fixed:
+    from:
+        type: zot
+        url: zot://aci-zot.cisco.com:5000/atomfsdemo/ubuntu:latest
+    run: |
+        apt update
+        apt install -y python3
