@@ -8,7 +8,7 @@
   "command": [
       "/bin/sh"
   ],
-  "log_path":"/tmp/busybox/",
+  "log_path":"/tmp/busybox.log",
   "linux": {
   }
 }
